@@ -89,25 +89,27 @@ window.carousel = (function () {
 
 			if (oTarget.tagName == 'A' && oTarget.className.indexOf('carousel-control') != -1) {
 				var oTargetAttr = oTarget.getAttribute('data-slide');
-				if (oTargetAttr == 'prev' && flag) {
+				if (oTargetAttr == 'next' && flag) {
 
 					eventLeftMove();
 				}
-				else if (oTargetAttr == 'next' && flag) {
+				else if (oTargetAttr == 'prev' && flag) {
 
 					eventRightMove();
 				}
 			}
 
+			return false;
+
 		}
 
 		function eventLeftMove() {
-		 	if (currentID == 0) {
-				clickID = length-1;
+		 	if (currentID == length-1) {
+				clickID = 0;
 
 			}
 			else {
-				clickID = currentID - 1;
+				clickID = currentID + 1;
 
 			}
 
@@ -116,12 +118,12 @@ window.carousel = (function () {
 		}
 
 		function eventRightMove() {
-		 	if (currentID == length-1) {
-				clickID = 0;
+		 	if (currentID == 0) {
+				clickID = length-1;
 
 			}
 			else {
-				clickID = currentID + 1;
+				clickID = currentID - 1;
 
 			}
 
@@ -134,7 +136,7 @@ window.carousel = (function () {
 
 			 if(e.keyCode==37 && flag == true) {
 			 	clearInterval(timer);
-			 	eventLeftMove();
+			 	eventRightMove();
 
 			 	if (mouseFlag) {
 			 		setTimeout(function () {
@@ -146,7 +148,7 @@ window.carousel = (function () {
 			 }
 			 else if (e.keyCode==39 && flag == true) {
 			 	clearInterval(timer);
-			 	eventRightMove();
+			 	eventLeftMove();
 
 			 	if (mouseFlag) {
 			 		setTimeout(function () {
