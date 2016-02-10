@@ -21,7 +21,7 @@
 在body中建立以下标签结构。
 ```html
 <div class="carousel" id="carousel">
-	<!-- 图片容器 --->
+	<!-- 图片容器 -->
 	<ol>
 		<li><img src=""></li>
 		<li><img src=""></li>
@@ -30,7 +30,7 @@
 		<li><img src=""></li>
 	</ol>
 
-	<!-- Icon按钮容器 --->
+	<!-- Icon按钮容器 -->
 	<div>
 		<span>0</span>
 		<span>1</span>
@@ -39,7 +39,7 @@
 		<span>4</span>
 	</div>
 
-	<!-- 左右两侧控制器 --->
+	<!-- 左右两侧控制器 -->
 	<a href="javascript:;"></a>
 	<a href="javascript:;"></a>
 </div>
@@ -49,7 +49,7 @@
 
 添加标签结构后，再为carousel容器内部添加class样式，以及自定义属性。
 
-```
+```html
 <div class="carousel" id="carousel">
 	<!-- 图片容器 --->
 	<ol class="imgsbox">
@@ -77,7 +77,7 @@
 </div>
 ```
 在body的最后引入carousel.js文件，然后调用`carousel.animation()`，可以传递一个运动间隔时间，单位为毫秒。可以不传递参数，默认为3500毫秒，运动间隔时间最小为1000毫秒，如果传递参数小于1000毫秒，按默认3500毫秒运动。
-```
+```html
 <body>
 	...
 	<script src="image_carousel.js"></script>
