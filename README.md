@@ -51,7 +51,7 @@
 
 ```html
 <div class="carousel" id="carousel">
-	<!-- 图片容器 --->
+	<!-- 图片容器 -->
 	<ol class="imgsbox">
 		<li class="item">	    <img src=""></li>
 		<li class="item">       <img src=""></li>
@@ -60,8 +60,8 @@
 		<li class="item">       <img src=""></li>
 	</ol>
 
-	<!-- Icon按钮容器 --->
-	<!-- 必须添加 data-slide , 从0开始计数, span中的数字可以不用填 --->
+	<!-- Icon按钮容器 -->
+	<!-- 必须添加 data-slide , 从0开始计数, span中的数字可以不用填 -->
 	<div class="iconsbox">
 		<span data-slide='0'>0</span>
 		<span data-slide='1'>1</span>
@@ -70,8 +70,8 @@
 		<span data-slide='4'>4</span>
 	</div>
 
-	<!-- 左右两侧控制器 --->
-	<!-- 必须添加 data-slide 添加如下class --->
+	<!-- 左右两侧控制器 -->
+	<!-- 必须添加 data-slide 添加如下class -->
 	<a href="javascript:;" data-slide="prev" class="carousel-control left"></a>
 	<a href="javascript:;" data-slide="next" class="carousel-control right"></a>
 </div>
