@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播</title>
+	<style>
+	body {
+		padding: 0;
+		margin: 0;
+	}
+	</style>
+	<link rel="stylesheet" href="image_carousel.css">
+</head>
+<body>
+	<div class="carousel" id="carousel">
+		<ol class="imgsbox">
+			<li class="item">	    <img src="image/1.jpg" alt=""></li>
+			<li class="item">       <img src="image/2.jpg" alt=""></li>
+			<li class="item active"><img src="image/3.jpg" alt=""></li>
+			<li class="item">       <img src="image/4.jpg" alt=""></li>
+			<li class="item">       <img src="image/5.jpg" alt=""></li>
+		</ol>
+		<div class="iconsbox">
+						   <span data-slide='0'>0</span>
+						   <span data-slide='1'>1</span>
+            <span data-slide='2' class='active'>2</span>
+			               <span data-slide='3'>3</span>
+			               <span data-slide='4'>4</span>
+		</div>
+		<a href="javascript:;" data-slide="prev" class="carousel-control left"></a>
+		<a href="javascript:;" data-slide="next" class="carousel-control right"></a>
+	</div>
+	<script src="image_carousel.js"></script>
+	<script>
+		carousel.animate(3000);
+	</script>
+</body>
+</html>
