@@ -14,6 +14,7 @@ window.carousel = (function () {
 		var delay 	  = 3500;
 		var timer     = null;
 		var flag 	  = true;
+		var mouseFlag = true;
 
 		if (typeof(d) == 'number' && d >= 1000) {
 			delay = d;
@@ -42,11 +43,13 @@ window.carousel = (function () {
 
 		carousel.onmouseenter = function () {
 			clearInterval(timer);
+			mouseFlag = false;
 		}
 
 		carousel.onmouseleave = function () {
 			setTimeout(function() {
 				_intervalMove();
+				mouseFlag = true;
 			}, 20);
 
 		}
@@ -77,12 +80,10 @@ window.carousel = (function () {
 				if (clickID > currentID && flag) {
 					flag = false;
 					slide(clickID, 'left');
-					console.log(1);
 				}
 				else if (clickID < currentID  && flag) {
 					flag = false;
 					slide(clickID, 'right');
-					console.log(2);
 				}
 			}
 
@@ -135,20 +136,24 @@ window.carousel = (function () {
 			 	clearInterval(timer);
 			 	eventLeftMove();
 
-			 	setTimeout(function () {
-			 		_intervalMove();
+			 	if (mouseFlag) {
+			 		setTimeout(function () {
+			 			_intervalMove();
 
-			 	}, 610);
+			 		}, 610);
+			 	}
 
 			 }
 			 else if (e.keyCode==39 && flag == true) {
 			 	clearInterval(timer);
 			 	eventRightMove();
 
-			 	setTimeout(function () {
-			 		_intervalMove();
+			 	if (mouseFlag) {
+			 		setTimeout(function () {
+			 			_intervalMove();
 
-			 	}, 610);
+			 		}, 610);
+			 	}
 
 			 }
 		}
